@@ -64,6 +64,63 @@ Traditional crop selection often depends heavily on experience, local convention
 This project addresses the problem using machine learning by **learning the patterns between measurable agricultural conditions and historically well-suited crops**, then generalizing those patterns to make recommendations for new, unseen conditions. The system treats crop recommendation as a **multiclass classification problem**, where the model predicts one crop out of 22 possible classes given a set of soil/climate readings.
 
 ---
+🧩 Project Workflow
+
+
+                Dataset
+                   │
+                   ▼
+             Data Inspection
+                   │
+                   ▼
+                  EDA
+                   │
+                   ▼
+           Data Preprocessing
+                   │
+                   ▼
+             Label Encoding
+                   │
+                   ▼
+            Feature Scaling
+                   │
+                   ▼
+            Train/Test Split
+                   │
+          ┌────────┴────────┐
+          ▼                 ▼
+   Decision Tree          XGBoost
+          │                 │
+          ▼                 ▼
+     GridSearchCV       GridSearchCV
+          │                 │
+          ▼                 ▼
+   Tuned Decision       Tuned XGBoost
+        Tree                 │
+          │                  │
+          └────────┬─────────┘
+                   ▼
+            Model Evaluation
+                   │
+                   ▼
+           Model Comparison
+                   │
+                   ▼
+          XGBoost Selected
+                   │
+          ┌────────┴─────────┐
+          ▼                  ▼
+  Feature Importance        SHAP
+          │                  │
+          └────────┬─────────┘
+                   ▼
+              Error Analysis
+                   │
+                   ▼
+               Conclusion
+
+
+---
 
 ## 📊 Dataset
 
