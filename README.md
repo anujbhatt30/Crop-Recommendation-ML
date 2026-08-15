@@ -65,64 +65,6 @@ This project addresses the problem using machine learning by **learning the patt
 
 ---
 
-## 🧩 Project Workflow
-
-```text
-Dataset
-   │
-   ▼
-Data Inspection
-   │
-   ▼
-EDA
-   │
-   ▼
-Data Preprocessing
-   │
-   ▼
-Label Encoding
-   │
-   ▼
-Feature Scaling
-   │
-   ▼
-Train/Test Split
-   │
-   ├───────────────┐
-   ▼               ▼
-Decision Tree    XGBoost
-   │               │
-   ▼               ▼
-GridSearchCV     GridSearchCV
-   │               │
-   ▼               ▼
-Tuned Decision   Tuned XGBoost
-Tree                │
-   │                │
-   └───────┬────────┘
-           ▼
-    Model Evaluation
-           │
-           ▼
-    Model Comparison
-           │
-           ▼
-    XGBoost Selected
-           │
-      ┌────┴────┐
-      ▼         ▼
-Feature       SHAP
-Importance
-      │         │
-      └────┬────┘
-           ▼
-     Error Analysis
-           │
-           ▼
-       Conclusion
-
----
-
 ## 📊 Dataset
 
 The dataset contains agricultural and environmental measurements paired with the crop that was historically well-suited to those conditions.
@@ -149,6 +91,11 @@ muskmelon, orange, papaya, pigeonpeas, pomegranate, rice, watermelon
 ```
 
 The classes are fairly balanced, with each crop typically represented by ~100 samples in the full dataset, which helps avoid the class-imbalance issues that often distort multiclass classifiers.
+
+---
+## 🧩 Project Workflow
+
+![Project Workflow](Images/crop_recommendation_project_workflow.png)
 
 ---
 
@@ -216,7 +163,6 @@ Both tuned models were evaluated on a held-out test set using multiple classific
 
 ![Model Comparison](Images/model_comparison.png)
 
----
 
 ### Confusion Matrix Analysis
 
@@ -275,8 +221,6 @@ SHAP was applied on top of the tuned XGBoost model to provide two levels of expl
 - **Local explainability:** SHAP force/waterfall plots were used to explain individual predictions, including the misclassified samples identified in the confusion matrix — for example, showing which feature values caused a mothbeans sample to be pushed toward a mungbean prediction, which helped confirm that the errors stemmed from genuine feature overlap rather than a modeling bug.
 
 This explainability layer is what makes the system usable in practice: a farmer or agronomist isn't just told "grow mungbean," but can also see *why* the model reached that conclusion in terms of their soil and climate readings.
-
----
 
 ### 🍈 Case Study: Explaining a Muskmelon Prediction
 
@@ -368,6 +312,6 @@ crop-recommendation-system/
 
 ## 📬 Contact
 
-Anuj bhatt
+Anuj Bhatt
 
 Feel free to connect for feedback, collaboration, or questions about this project.
