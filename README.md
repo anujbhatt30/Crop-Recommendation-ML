@@ -310,7 +310,10 @@ crop-recommendation-system/
 
 ---
 
-## 📬 Contact
+## Contributing
+Contributions are welcome! Feel free to open issues or submit pull requests. For major changes, please open an issue first to discuss what you would like to change.
+
+## Author
 
 Anuj Bhatt
 
