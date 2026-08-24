@@ -222,6 +222,8 @@ SHAP was applied on top of the tuned XGBoost model to provide two levels of expl
 
 This explainability layer is what makes the system usable in practice: a farmer or agronomist isn't just told "grow mungbean," but can also see *why* the model reached that conclusion in terms of their soil and climate readings.
 
+---
+
 ### 🍈 Case Study: Explaining a Muskmelon Prediction
 
 To illustrate local explainability in practice, a SHAP force/waterfall plot was generated for a sample the model correctly predicted as **muskmelon**. This walks through how the model arrived at that specific prediction, feature by feature:
