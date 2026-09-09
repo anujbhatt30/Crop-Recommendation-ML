@@ -319,4 +319,6 @@ Contributions are welcome! Feel free to open issues or submit pull requests. For
 
 Anuj Bhatt
 
+---
+
 Feel free to connect for feedback, collaboration, or questions about this project.
